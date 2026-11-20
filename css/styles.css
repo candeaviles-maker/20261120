@@ -74,7 +74,6 @@ header p.text-danger {
 }
 
 #menu-shows button {
-  font-size: 1.6rem;
   padding: 12px 15px;
   border-radius: 8px;
   transition: transform 0.5s;
