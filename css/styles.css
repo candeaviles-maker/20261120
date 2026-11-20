@@ -37,7 +37,7 @@ h3 {
 }
 
 header {
-  border-bottom: 3px solid var(--rojo-river) !important;
+  border-bottom: 3px solid var(--rojo-river);
 }
 
 header p.text-danger {
