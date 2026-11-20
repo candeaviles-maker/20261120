@@ -33,6 +33,10 @@ h3 {
   font-weight: 700;
 }
 
+.btn {
+  font-size: 1.6rem;
+}
+
 .navbar-brand {
   font-family: "Anton", sans-serif;
   font-size: 2.4rem;
@@ -66,7 +70,7 @@ header p.text-danger {
 #detalle-show img {
   border-radius: 8px;
   max-height: 420px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #menu-shows button {
