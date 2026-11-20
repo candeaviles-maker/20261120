@@ -55,6 +55,12 @@ header p.text-danger {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+#detalle-show img {
+  border-radius: 8px;
+  max-height: 420px;
+  object-fit: cover;
+}
+
 #menu-shows button {
   font-size: 1.6rem;
   padding: 12px 15px;
@@ -96,9 +102,4 @@ a:hover {
 
 footer a {
   color: white;
-}
-#detalle-show img {
-  border-radius: 8px;
-  max-height: 420px;
-  object-fit: cover;
 }
