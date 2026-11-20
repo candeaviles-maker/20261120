@@ -1,0 +1,34 @@
+[
+  {
+    "artista": "María Becerra",
+    "lugar": "Movistar Arena",
+    "fecha": "3 de diciembre de 2026",
+    "descripcion": "Una de las artistas pop más convocantes del país, con un show lleno de hits para cantar de principio a fin.",
+    "link": "https://es.wikipedia.org/wiki/Mar%C3%ADa_Becerra",
+    "imagen": "img/maria-becerra.jpg"
+  },
+  {
+    "artista": "Babasónicos",
+    "lugar": "Movistar Arena",
+    "fecha": "10 de diciembre de 2026",
+    "descripcion": "Una noche de rock nacional con una de las bandas más importantes de la escena argentina.",
+    "link": "https://es.wikipedia.org/wiki/Babas%C3%B3nicos",
+    "imagen": "img/babasonicos.jpg"
+  },
+  {
+    "artista": "Tini",
+    "lugar": "Movistar Arena",
+    "fecha": "19 de diciembre de 2026",
+    "descripcion": "La cantante argentina vuelve al escenario con un show de pop, baile y sus canciones más conocidas.",
+    "link": "https://es.wikipedia.org/wiki/Tini_Stoessel",
+    "imagen": "img/tini.jpg"
+  },
+  {
+    "artista": "Cruzando el Charco",
+    "lugar": "Movistar Arena",
+    "fecha": "21 de diciembre de 2026",
+    "descripcion": "Una fecha para cerrar el año bailando con todos sus temas.",
+    "link": "https://www.google.com/search?q=Cruzando+el+Charco",
+    "imagen": "img/cruzando-el-charco.jpg"
+  }
+]

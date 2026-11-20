@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+  --rojo-river: #d71920;
+  --rojo-oscuro: #a51117;
+  --gris: #1e1e1e;
+}
+
+html {font-size: 10px;}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+h1, h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+
+h1 {font-size: 6rem;}
+h2 {font-size: 3.2rem;}
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+  font-size: 2.4rem;
+  color: var(--rojo-river) !important;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+header {
+  border-bottom: 3px solid var(--rojo-river) !important;
+}
+
+header p.text-danger {
+  letter-spacing: 2px;
+}
+
+.btn-danger {
+  background-color: var(--rojo-river);
+  border-color: var(--rojo-river);
+}
+
+#detalle-show {
+  border-radius: 12px;
+  border-top: 4px solid var(--rojo-river) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#menu-shows button {
+  font-size: 1.6rem;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: transform 0.5s;
+}
+
+#menu-shows button:hover {
+  background-color: var(--rojo-oscuro);
+  transform: translateY(2px);
+}
+
+.fecha {
+  width: 7rem;
+  font-size: 2rem;
+}
+
+#estadio img {
+  border-radius: 12px;
+  transition: all 0.8s;
+}
+
+#estadio img:hover {
+  transform: rotate(-2deg);
+  opacity: 0.8;
+}
+
+#estadio .border {
+  background-color: var(--gris);
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--rojo-river);
+}
+
+footer a {
+  color: white;
+}
+#detalle-show img {
+  border-radius: 8px;
+  max-height: 420px;
+  object-fit: cover;
+}

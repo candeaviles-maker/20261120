@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Recitales BA</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
+      <div class="container">
+        <a class="navbar-brand" href="#">Recitales BA</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#myMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#shows">Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#agenda">Agenda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#estadio">Estadio</a>
+            </li>
+            <li>
+              <button
+                class="btn btn-outline-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#myModal"
+              >
+                Recibir avisos
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="modal fade" id="myModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen-md-down">
+        <div class="modal-content text-dark">
+          <div class="modal-header">
+            <h5 class="modal-title">Recibí avisos de nuevas fechas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+
+            <form id="miFormulario" action="https://api.web3forms.com/submit" method="post" novalidate class="needs-validation">
+                         <input type="hidden" name="access_key" value="71b22835-1010-42ae-ae1d-08b60e91cb33" />
+
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required />
+                <div class="invalid-feedback">Escribí tu nombre.</div>
+                <div class="valid-feedback">¡Perfecto!</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="artista" class="form-label">Artista favorito</label>
+                <select class="form-select" name="artista" id="artista" required>
+                  <option value="" selected disabled>Elegí un artista</option>
+                  <option value="maria-becerra">María Becerra</option>
+                  <option value="babasonicos">Babasónicos</option>
+                  <option value="tini">Tini</option>
+                  <option value="cruzando-el-charco">Cruzando el Charco</option>
+                </select>
+                <div class="invalid-feedback">Elegí un artista.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="nombre@email.com" required />
+                <div class="invalid-feedback">Escribí un email válido.</div>
+              </div>
+
+              <button class="btn btn-danger">Enviar</button>
+            </form>
+
+            <div id="mensajeGracias" class="d-none">
+              <p>¡Gracias! Te vamos a avisar cuando haya nuevas fechas.</p>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="bg-black py-5 mb-5">
+      <div class="container py-4">
+        <p class="text-uppercase text-danger fw-bold mb-3">Música en vivo · Buenos Aires</p>
+
+        <h1 class="text-uppercase mb-3">
+          La ciudad suena
+          <span class="d-block text-danger">en vivo</span>
+        </h1>
+
+        <p class="lead text-light mb-4">
+          Los recitales que cierran el 2026 en el Movistar Arena.
+        </p>
+
+        <a href="#shows" class="btn btn-danger btn-lg">Ver los shows</a>
+      </div>
+    </header>
+
+    <main class="container pb-5">
+
+      <section id="shows" class="mb-5">
+        <div class="row g-4">
+          <aside class="col-lg-4">
+            <div class="card bg-black text-light border-secondary h-100">
+              <div class="card-body p-4">
+                <h2 class="text-uppercase mb-3">Artistas</h2>
+                <p class="text-light mb-4">Elegí un artista para ver su show.</p>
+                <nav id="menu-shows" class="d-flex flex-column gap-2"></nav>
+              </div>
+            </div>
+          </aside>
+
+          <div class="col-lg-8">
+            <div id="detalle-show" class="card bg-light text-dark border-secondary h-100"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="agenda" class="mb-5">
+        <div class="row align-items-end mb-4">
+          <div class="col-md-7">
+            <h2 class="text-uppercase mb-0">Agenda</h2>
+          </div>
+          <div class="col-md-5">
+            <p class="text-secondary mb-0">Fechas confirmadas en diciembre en el Movistar Arena.</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 border-bottom border-secondary py-3">
+          <p class="fecha text-danger fw-bold mb-0">03/12</p>
+          <div>
+            <h3 class="mb-1">María Becerra</h3>
+            <p class="text-secondary mb-0">Movistar Arena</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 border-bottom border-secondary py-3">
+          <p class="fecha text-danger fw-bold mb-0">10/12</p>
+          <div>
+            <h3 class="mb-1">Babasónicos</h3>
+            <p class="text-secondary mb-0">Movistar Arena</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 border-bottom border-secondary py-3">
+          <p class="fecha text-danger fw-bold mb-0">19/12</p>
+          <div>
+            <h3 class="mb-1">Tini</h3>
+            <p class="text-secondary mb-0">Movistar Arena</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 border-bottom border-secondary py-3">
+          <p class="fecha text-danger fw-bold mb-0">21/12</p>
+          <div>
+            <h3 class="mb-1">Cruzando el Charco</h3>
+            <p class="text-secondary mb-0">Movistar Arena</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="estadio">
+        <div class="row align-items-center g-4">
+          <div class="col-md-6">
+            <img src="img/estadio.jpg" alt="Movistar Arena" class="img-fluid" />
+          </div>
+
+          <div class="col-md-6 d-flex flex-column gap-3">
+            <h2 class="text-uppercase mb-0">Movistar Arena</h2>
+            <p class="text-light mb-0">El estadio cubierto donde hay recitales casi todas las noches del año.</p>
+            <div class="border border-secondary rounded p-3">
+              <h3 class="mb-1">Dirección</h3>
+              <p class="text-secondary mb-0">Humboldt 450, Villa Crespo</p>
+            </div>
+            <div class="border border-secondary rounded p-3">
+              <h3 class="mb-1">Capacidad</h3>
+              <p class="text-secondary mb-0">Más de 15.000 personas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="border-top border-secondary py-4 text-secondary">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <p class="mb-0">&copy; 2026 Recitales BA</p>
+        <div class="d-flex gap-3">
+          <a href="https://www.instagram.com" target="_blank">Instagram</a>
+          <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/code.js"></script>
+
+    <script>
+      const formulario = document.querySelector("#miFormulario");
+      const mensajeGracias = document.querySelector("#mensajeGracias");
+
+      formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!formulario.checkValidity()) {
+          event.stopPropagation();
+          formulario.classList.add("was-validated");
+          return;
+        }
+
+        formulario.classList.add("was-validated");
+
+        formulario.classList.add("d-none");
+        mensajeGracias.classList.remove("d-none");
+      });
+    </script>
+  </body>
+</html>
